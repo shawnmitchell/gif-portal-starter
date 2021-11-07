@@ -30,12 +30,7 @@ const opts = {
 const TWITTER_HANDLE = '_buildspace';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
-const TEST_GIFS = [
-	'https://i.giphy.com/media/eIG0HfouRQJQr1wBzz/giphy.webp',
-	'https://media3.giphy.com/media/L71a8LW2UrKwPaWNYM/giphy.gif?cid=ecf05e47rr9qizx2msjucl1xyvuu47d7kf25tqt2lvo024uo&rid=giphy.gif&ct=g',
-	'https://media4.giphy.com/media/AeFmQjHMtEySooOc8K/giphy.gif?cid=ecf05e47qdzhdma2y3ugn32lkgi972z9mpfzocjj6z1ro4ec&rid=giphy.gif&ct=g',
-	'https://i.giphy.com/media/PAqjdPkJLDsmBRSYUp/giphy.webp'
-]
+
 
 const App = () => {
   const [walletAddress, setWalletAddress] = useState(null);
@@ -101,7 +96,7 @@ const App = () => {
       // Set state
       getGifList();
     }
-  }, [walletAddress]);
+  }, [walletAddress, getGifList]);
 
   useEffect(() => {
     window.addEventListener('load', async (event) => {
@@ -208,7 +203,7 @@ const renderConnectedContainer = () => {
 					{/* We use index as the key instead, also, the src is now item.gifLink */}
           {gifList.map((item, index) => (
             <div className="gif-item" key={index}>
-              <img src={item.gifLink} />
+              <img src={item.gifLink} alt="broken link" />
             </div>
           ))}
         </div>
