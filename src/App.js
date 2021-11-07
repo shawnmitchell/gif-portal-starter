@@ -96,7 +96,7 @@ const App = () => {
       // Set state
       getGifList();
     }
-  }, [walletAddress, getGifList]);
+  }, [walletAddress]);
 
   useEffect(() => {
     window.addEventListener('load', async (event) => {
